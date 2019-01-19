@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="TRICOMIFY.svg">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="-49.285713 : 499.03823 : 1"
+       inkscape:vp_y="0 : 999.99998 : 0"
+       inkscape:vp_z="694.80876 : 499.03823 : 1"
+       inkscape:persp3d-origin="322.76152 : 323.64453 : 1"
+       id="perspective3370" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="-298.16544 : 717.5257 : 1"
+       inkscape:vp_y="0 : 914.11018 : 0"
+       inkscape:vp_z="889.3733 : 717.5257 : 1"
+       inkscape:persp3d-origin="295.60392 : 557.19652 : 1"
+       id="perspective3340" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="2.0259012 : 655.65606 : 1"
+       inkscape:vp_y="0 : 999.99998 : 0"
+       inkscape:vp_z="746.12037 : 655.65606 : 1"
+       inkscape:persp3d-origin="374.07313 : 480.26236 : 1"
+       id="perspective3370-0" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="83.6007"
+     inkscape:cy="674.99007"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-text-baseline="true"
+     inkscape:object-paths="true"
+     inkscape:window-width="1887"
+     inkscape:window-height="1056"
+     inkscape:window-x="33"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#552200"
+       id="path4251"
+       d="m 132.16695,486.38991 c 4.71754,1.65236 9.81038,2.06393 14.75407,2.47431 10.51659,0.87299 12.15304,0.74475 23.83796,1.1034 6.71896,-0.0906 13.44479,0.0451 20.15689,-0.2717 9.3003,-0.43888 18.60425,-0.99069 27.86065,-1.99427 42.22433,-4.57797 83.56238,-13.57758 123.79184,-27.30797 15.8167,-5.39827 31.16407,-12.08462 46.7461,-18.12693 62.96127,-30.70984 31.41838,-13.61804 94.39984,-51.69548 0,0 1.46609,-0.56651 1.46609,-0.56651 l 0,0 c -67.56932,41.20326 -34.35122,23.19982 -99.18518,54.86707 -15.72802,6.14074 -31.23503,12.88077 -47.18406,18.42223 -51.10469,17.75622 -104.53906,29.1855 -158.40063,34.0962 -7.2228,0.65852 -14.47817,0.8904 -21.71726,1.3356 -12.97313,0.26027 -14.12151,0.46202 -25.75708,0.14422 -4.37723,-0.11955 -7.75689,-0.25324 -11.9654,-0.81014 -0.39438,-0.0522 -3.62159,-0.65669 -4.45693,-0.81225 0,0 15.6531,-10.85778 15.6531,-10.85778 z"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="96.232758"
+       y="465.53223"
+       id="text3336"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3338"
+         x="96.232758"
+         y="465.53223"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:70px;font-family:STIX;-inkscape-font-specification:STIX;fill:#552200">TRICOMIFY</tspan></text>
+  </g>
+</svg>
