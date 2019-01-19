@@ -1,4 +1,4 @@
-#Time-stamp: <2019-01-20 05:15:01 hamada>
+#Time-stamp: <2019-01-20 07:08:55 hamada>
 
 TARGET = run.x
 OUTPUT = ./rola.log
@@ -26,5 +26,6 @@ init:
 	sudo stty -F ${devfile}
 	sudo usermod -a -G dialout $(username)
 	groups ${username}
+	ls -la ${devfile}
 
 

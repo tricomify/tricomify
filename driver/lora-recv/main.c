@@ -1,5 +1,5 @@
 /** 
- * Time-stamp: <2019-01-20 05:05:52 hamada>
+ * Time-stamp: <2019-01-20 07:28:09 hamada>
  *
  * Driver for LoRa Receiver by T. Hamada
  * Reference: The Linux Documentation Project,
@@ -15,13 +15,69 @@
 #include <unistd.h>
 #include <string.h>
 #include <assert.h>
+#include <signal.h>
+
+volatile sig_atomic_t isAbort = 0;
+void handleAbort(int signal);
+
 
 #define MODEMDEVICE "/dev/ttyUSB0"
 #define BAUDRATE B57600
 #define _POSIX_SOURCE 1
 #define BUFSIZE 256
 
-int main()
+int csv2json(char* str, int len) {
+
+  const char* keys[] = {
+    "obc_time",    // OBCTime
+    "recv_count",  // RecvCounter
+    "date",        // DATE(ddmmyy) in UTC
+    "time",        // TIME(HHMMSS) in UTC
+    "rx_lat",      // RX_LAT
+    "rx_long",     // RX_LONG
+    "rx_alt",      // RX_ALT(m)
+    "rx_temp",     // Temp(RX)
+    "rx_airp",     // AirPressure(RX)
+    "datasize",    // DataSize
+    "tx_id",       // TX_ID
+    "tx_count",    // TX_Counter
+    "payload",     // payload
+    "data_n",      // column N in Csv
+    "data_o",      // column O in Csv
+    "data_p",      // column P in Csv
+    "data_q"};     // column Q in Csv
+  int ikey = 0;
+                      
+  const char separator = ',';
+  char _buf[BUFSIZE-1];
+  int _bufp = 0;
+
+  printf ("{");
+  for (int i=0; i<len; i++){
+    char c = str[i];
+
+    if (separator == c || 0 == c) {
+      printf ("\"");
+      for (int ic = 0; ic < _bufp; ic++) {
+        printf ("%c", _buf[ic]);
+      }
+      printf ("\", ");
+      _bufp = 0;
+    } else {
+      if (0 == _bufp) {
+        printf ("\"%s\": ", keys[ikey]);
+        ikey++;
+      }
+      _buf[_bufp] = (char)c;
+      _bufp += 1;
+    }
+
+  }
+  printf ("}\n");
+  fflush(stdout);
+}
+
+int main(int argc,char *argv[])
 {
   int fd, c;
   struct termios oldtio, newtio;
@@ -59,7 +115,11 @@ int main()
   tcflush(fd, TCIFLUSH);
   tcsetattr(fd, TCSANOW, &newtio);
 
-  while (1) {
+  if ( signal(SIGINT, handleAbort) == SIG_ERR ) {
+    exit(1);
+  }
+
+  while (!isAbort) {
     static char str[BUFSIZE-1];
     int len = read(fd, buf, BUFSIZE-1);
     if (BUFSIZE <= len) break;
@@ -69,10 +129,20 @@ int main()
     }
     str[len-1] = 0;
     if (len>1) {
-      printf("%s\n", str);
-      fflush(stdout);
+      csv2json(str, len);
+      if (0) {
+        printf("%s\n", str);
+        fflush(stdout);
+      }
     }
   }
 
+  fprintf (stderr, "Terminate %s\n", argv[0]);
   tcsetattr(fd, TCSANOW, &oldtio);
+}
+
+
+void handleAbort(int signal) {
+  isAbort = 1;
+  fprintf (stderr, "caught signal @ %s, %s [%d].\n", __func__, __FILE__, __LINE__);
 }
