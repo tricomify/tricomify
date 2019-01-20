@@ -1,5 +1,5 @@
 /** 
- * Time-stamp: <2019-01-20 07:37:13 hamada>
+ * Time-stamp: <2019-01-20 10:44:57 hamada>
  *
  * Driver for LoRa Receiver by T. Hamada
  * Reference: The Linux Documentation Project,
@@ -119,6 +119,8 @@ int main(int argc,char *argv[])
     exit(1);
   }
 
+  const int isJson = 0;
+
   while (!isAbort) {
     static char str[BUFSIZE-1];
     int len = read(fd, buf, BUFSIZE-1);
@@ -129,8 +131,9 @@ int main(int argc,char *argv[])
     }
     str[len-1] = 0;
     if (len>1) {
-      csv2json(str, len);
-      if (0) {
+      if (isJson) {
+        csv2json(str, len);
+      } else {
         printf("%s\n", str);
         fflush(stdout);
       }
