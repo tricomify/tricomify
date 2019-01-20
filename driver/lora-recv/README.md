@@ -23,36 +23,36 @@
 ## 生データの各カラム説明
 |column| 呼称 | 説明 |
 |--:|:------------|:------------|
-| 1 | OBCTime     | OBC(On-Board Computer)の時計. OBCは送信機内??? or 受信機内 ???|
-| 2 | RecvCounter | 受信機の受信データ集計用カウンターの値 ???|
-| 3 | DATE        | 日付(ddmmyy), UTC日付
-| 4 | TIME        | 時刻(HHMMSS), UTC時刻
-| 5 | RX_LAT      | ??? 送信機から受信機までの通信レイテンシ ???|
-| 6 | RX_LONG     | ??? 送信機から受信機までの距離 ???|
-| 7 | RX_ALT      | ??? 受信機の海抜高度 ???.  単位はmeter[m]|
-| 8 | Temp(RX)    | 受信機温度センサーの値|
-| 9 | AirPressure(RX) | 受信機の気圧センサーの値|
-|10 | DataSize   | データサイズ. Byte表記 |
-|12 | TX_ID      | |
-|13 | TX_Counter | |
-|14 | payload    | ペイロード番号 |
-|15 | column N   | CSVファイルのNカラム目 (ペイロード番号により意味が異なる)
-|16 | column O   | CSVファイルのOカラム目 (ペイロード番号により意味が異なる)
-|17 | column P   | CSVファイルのPカラム目 (ペイロード番号により意味が異なる)
-|18 | column Q   | CSVファイルのQカラム目 (ペイロード番号により意味が異なる)
+| 1 | OBCTime     | OBC時刻(msec). 電源ONからの経過時刻. Arduinoのmillis()関数値 |
+| 2 | RecvCounter | 受信機の受信回数カウンタ値 |
+| 3 | GPSDATE     | 受信機GPS日付(ddmmyy, UTC) |
+| 4 | GPSTIME     | 受信機GPS時刻(HHMMSS, UTC) |
+| 5 | RX_LAT      | 受信機の緯度(10進､符号付き) |
+| 6 | RX_LONG     | 受信機の経度(10進､符号付き) |
+| 7 | RX_ALT      | 受信機の高度(m)(符号付き) |
+| 8 | Temp(RX)    | 受信機基板温度(符号付き小数点以下2桁) |
+| 9 | AirPressure(RX) | 受信機気圧(hPa, 100を乗じて整数化)(符号付き) |
+|10 | DataSize   | 受信データサイズ. Byte表記 |
+|12 | TX_ID      | 送信機ID |
+|13 | TX_Counter | 送信機の送信カウンタ値(1byteループ) |
+|14 | payload    | 送信ペイロードタイプ |
+|15 | column N   | ペイロードタイプにより意味が異なる. 次項参照. |
+|16 | column O   | ペイロードタイプにより意味が異なる. 次項参照. |
+|17 | column P   | ペイロードタイプにより意味が異なる. 次項参照. |
+|18 | column Q   | ペイロードタイプにより意味が異なる. 次項参照. |
 
 ### ペイロードが1の場合
 |column| name | 概要 |
 |--:|:-----------|:------------|
-|15 | column N   | ???
-|16 | column O   | ???
-|17 | column P   | ???
-|18 | column Q   | ???
+|15 | column N   | UTC時刻(HHMMSS) |
+|16 | column O   | 送信機緯度(10進)(符号付き) |
+|17 | column P   | 送信機経度(10進)(符号付き) |
+|18 | column Q   | 送信機高度(m)(符号付き) |
 
 ### ペイロードが2の場合
 |column| name | 概要 |
 |--:|:-----------|:------------|
-|15 | column N   | ???
-|16 | column O   | ???
-|17 | column P   | ???
-|18 | column Q   | データなし
+|15 | column N   | 送信機温度(現段階では小数点切り捨て)(符号付き)
+|16 | column O   | 送信機気圧(現段階では小数点切り捨て)
+|17 | column P   | 送信機電源電圧(10を掛けて整数化した値)
+|18 | column Q   | N/A
