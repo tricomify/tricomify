@@ -1,5 +1,5 @@
 /** 
- * Time-stamp: <2019-01-20 07:28:09 hamada>
+ * Time-stamp: <2019-01-20 07:37:13 hamada>
  *
  * Driver for LoRa Receiver by T. Hamada
  * Reference: The Linux Documentation Project,
@@ -73,7 +73,7 @@ int csv2json(char* str, int len) {
     }
 
   }
-  printf ("}\n");
+  printf ("},\n");
   fflush(stdout);
 }
 
@@ -144,5 +144,5 @@ int main(int argc,char *argv[])
 
 void handleAbort(int signal) {
   isAbort = 1;
-  fprintf (stderr, "caught signal @ %s, %s [%d].\n", __func__, __FILE__, __LINE__);
+  fprintf (stderr, "\n catch a signal[%d] @ %s, %s [%d].\n", signal, __func__, __FILE__, __LINE__);
 }
