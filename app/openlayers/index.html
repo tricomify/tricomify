@@ -14,19 +14,9 @@
   <body>
     <h2>My Map</h2>
     <div id="map" class="map"></div>
-    <script type="text/javascript">
-      var map = new ol.Map({
-      target: 'map',
-      layers: [
-      new ol.layer.Tile({
-      source: new ol.source.OSM()
-      })
-      ],
-      view: new ol.View({
-      center: ol.proj.fromLonLat([139.754784, 35.708316]),
-      zoom: 10
-      })
-      });
+    <br />
+    <div id="map2" class="map"></div>
+    <script type="text/javascript" src="main.js">
     </script>
   </body>
 </html>
