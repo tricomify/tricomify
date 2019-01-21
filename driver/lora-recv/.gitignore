@@ -1,7 +1,9 @@
-#Time-stamp: <2019-01-20 07:34:24 hamada>
+#Time-stamp: <2019-01-21 16:31:41 hamada>
 
-# json log
-*.json
+# rola log
+rola*.json
+rola*.txt
+rola*.log
 
 # emacs backup
 *~
