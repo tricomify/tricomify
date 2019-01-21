@@ -1,7 +1,7 @@
-#Time-stamp: <2019-01-20 07:34:43 hamada>
+#Time-stamp: <2019-01-22 05:27:08 hamada>
 
 TARGET = run.x
-OUTPUT = ./rola.json
+OUTPUT = ./lora.json
 
 all:
 	gcc main.c -o ${TARGET}
