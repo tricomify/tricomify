@@ -5,10 +5,15 @@ import TileLayer from 'ol/layer/Tile';
 import TileWMS from 'ol/source/TileWMS';
 import OSM from 'ol/source/OSM';
 import { fromLonLat } from 'ol/proj';
+import {defaults as defaultControls, ScaleLine} from 'ol/control.js';
 
+const scaleLineControl = new ScaleLine();
 
 const map = new Map({
   target: 'map',
+  controls: defaultControls().extend([
+    scaleLineControl
+  ]),
   layers: [
     new Tile({
       source: new OSM()
