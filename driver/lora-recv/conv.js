@@ -36,20 +36,57 @@ function readCsv (fname) {
     .then( (lines) => {
       const csv =  lines.map ( line => {
         const arr = line.split(',');
-        if ('1' === arr[12]) return arr; // payload '1' only
+        //if ('1' === arr[12]) return arr; // payload '1' only
+        if (17 === arr.length) return arr; // payload '1' only
       }).filter( line => line !== undefined);
       return (csv);
     })
     .then( (csv) => {
       const pos =  csv.map ( cell => {
-        return ([parseInt(cell[15])/1e6, parseInt(cell[14])/1e6]);
+        const pLng = parseInt(cell[15])/1e6 || 0.0;
+        const pLat = parseInt(cell[14])/1e6 || 0.0;
+        if (pLng > 0.1 && pLat > 0.1) {
+          const r = [parseInt(cell[15])/1e6, parseInt(cell[14])/1e6];
+          return r;
+        }
       });
       return pos;
     })
     .then( (pos) => {
+      let pos_new = [];
       pos.map( r => {
-        console.log(r);
+        try {
+          if (( 2 === r.length) && (undefined !== r)) {
+            pos_new.push(r);
+          }
+        } catch (err) {
+          // do nothing
+        }
       });
+      return (pos_new);
+    })
+    .then( (pos) => {
+      // pos.map ( r => console.log(r) );
+      return pos;
+    })
+    .then( (pos) => {
+      let js = '';
+      js += "export const pos = [\n";
+      pos.map( r => {
+        js += `  [${r[0]}, ${r[1]}],\n`;
+/*
+        try {
+          if ( 2 === r.length) {
+            //console.log(`  [${r[0]}, ${r[1]}],`);
+          }
+        } catch (err) {
+          console.error('r = ', r);
+          console.error(err);
+        }
+}*/
+      });
+      js += "];\n";
+      console.log(js);
     })
     .catch((err) => {
       console.error(err);
