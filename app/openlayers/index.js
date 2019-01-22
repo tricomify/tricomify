@@ -19,14 +19,14 @@ const mousePositionControl = new MousePosition({
   undefinedHTML: '&nbsp;'
 });
 
-var projectionSelect = document.getElementById('projection');
+const projectionSelect = document.getElementById('projection');
 projectionSelect.addEventListener('change', function(event) {
   mousePositionControl.setProjection(event.target.value);
 });
 
-var precisionInput = document.getElementById('precision');
+const precisionInput = document.getElementById('precision');
 precisionInput.addEventListener('change', function(event) {
-  var format = createStringXY(event.target.valueAsNumber);
+  const format = createStringXY(event.target.valueAsNumber);
   mousePositionControl.setCoordinateFormat(format);
 });
 
@@ -60,72 +60,8 @@ const styles = {
 };
 
 
+// Tokyo [139.41302, 35.41224]
 const pos = [
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
-  [ 139.755168, 35.708112 ],
   [ 139.755168, 35.708112 ],
   [ 139.755168, 35.708112 ],
   [ 139.754832, 35.70822 ],
@@ -184,15 +120,11 @@ const pos = [
   [ 139.754784, 35.708316 ],
 ]; 
 
-// Tokyo [139.41302, 35.41224]
-
-
 const count = pos.length;
 const features = new Array(count);
 
 for (let i = 0; i < count; ++i) {
-  var coordinates = pos[i];
-  features[i] = new Feature(new Point(coordinates));
+  features[i] = new Feature(new Point(pos[i]));
   features[i].setStyle(styles['triangle']);
 }
 
@@ -203,8 +135,6 @@ const source = new VectorSource({
 const vectorLayer = new VectorLayer({
   source: source
 });
-
-
 
 const scaleLineControl = new ScaleLine();
 
