@@ -1,9 +1,10 @@
-#Time-stamp: <2019-01-22 05:27:57 hamada>
+#Time-stamp: <2019-01-22 11:24:41 hamada>
 
 # rola log
 rola*.json
 rola*.txt
 rola*.log
+*.txt
 
 # rola log
 lora*.json
