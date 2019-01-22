@@ -42,7 +42,7 @@ function readCsv (fname) {
     })
     .then( (csv) => {
       const pos =  csv.map ( cell => {
-        return ([Number(cell[14]/1e6), Number(cell[15]/1e6)]);
+        return ([Number(cell[15]/1e6), Number(cell[14]/1e6)]);
       });
       return pos;
     })
