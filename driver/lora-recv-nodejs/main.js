@@ -10,7 +10,10 @@ const debug = msg => (console.log(ts() + msg));
 
 parser.on('data', data => {
   const s = data.replace(/\r/g, '');
+  const { convRaw2Json } = require('./utils/convRaw2Json');
+  const json = convRaw2Json(data);
   debug(s);
+  debug(JSON.stringify(json, undefined, 2));
 });
 
 
