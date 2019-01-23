@@ -1,7 +1,8 @@
-#Time-stamp: <2019-01-22 05:27:08 hamada>
+#Time-stamp: <2019-01-23 09:02:16 hamada>
 
 TARGET = run.x
 OUTPUT = ./lora.json
+POSJS = ../../app/openlayers/pos.js
 
 all:
 	gcc main.c -o ${TARGET}
@@ -28,4 +29,5 @@ init:
 	groups ${username}
 	ls -la ${devfile}
 
-
+update:
+	./conv.js rola.1.log $1 ${POSJS}
