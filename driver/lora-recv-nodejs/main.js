@@ -11,9 +11,15 @@ const debug = msg => (console.log(ts() + msg));
 parser.on('data', data => {
   const s = data.replace(/\r/g, '');
   const { convRaw2Json } = require('./utils/convRaw2Json');
+  const { writeJson } = require('./utils/writeJson');
+
   const json = convRaw2Json(data);
+
+  writeJson(json);
+
   debug(s);
   debug(JSON.stringify(json, undefined, 2));
+  
 });
 
 

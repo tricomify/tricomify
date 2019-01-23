@@ -1,4 +1,7 @@
-#Time-stamp: <2019-01-22 12:10:57 hamada>
+#Time-stamp: <2019-01-23 14:28:04 hamada>
+
+# log
+./log
 
 # percel build files
 .cache
