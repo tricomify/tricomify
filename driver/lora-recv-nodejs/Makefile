@@ -1,11 +1,11 @@
-#Time-stamp: <2019-01-23 12:36:30 hamada>
+#Time-stamp: <2019-01-23 12:56:46 hamada>
 
 TARGET=./main.js
 
 all: run
 
 run:
-	node ./${TARGET}
+	node ${TARGET}
 
 clean:
 	rm -rf *~ .*~ ${TARGET} *.o
