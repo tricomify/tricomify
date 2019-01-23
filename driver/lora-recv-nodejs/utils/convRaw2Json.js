@@ -20,8 +20,8 @@ module.exports.convRaw2Json = (rawData) => {
   json.rx_recvCnt = cs[1];
   json.rx_gpsDate = cs[2];
   json.rx_gpsTime = cs[3];
-  json.rx_lat = cs[4];
-  json.rx_long = cs[5];
+  json.rx_lat = parseInt(cs[4])/1e6 || none;
+  json.rx_long = parseInt(cs[5])/1e6 || none;
   json.rx_alt = cs[6];
   json.rx_temp = cs[7];
   json.rx_airP = cs[8];
@@ -32,8 +32,8 @@ module.exports.convRaw2Json = (rawData) => {
 
   if (1 === payload) {
     json.tx_gpsTime = cs[13] || none;
-    json.tx_lat = cs[14] || none;
-    json.tx_long = cs[15] || none;
+    json.tx_lat = parseInt(cs[14])/1e6 || none;
+    json.tx_long = parseInt(cs[15])/1e6 || none;
     json.tx_alt  = cs[16] || none;
   }
 
