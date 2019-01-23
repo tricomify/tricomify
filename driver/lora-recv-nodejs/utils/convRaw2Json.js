@@ -43,7 +43,7 @@ module.exports.convRaw2Json = (rawData) => {
     json.tx_volt = cs[15] || none;
   }
 
-  const isBroken = false;
+  let isBroken = false;
   if (1 === payload) {
     if((none === json.tx_gpsTime) ||
        (none === json.tx_lat) ||
