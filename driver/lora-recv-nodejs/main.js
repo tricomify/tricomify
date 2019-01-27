@@ -22,7 +22,7 @@ const createPacket = (txmsg) => {
 parser.on('data', data => {
   const s = data.replace(/\r/g, '');
   const { convRaw2Json } = require('./utils/convRaw2Json');
-  const { writeJson } = require('./utils/writeJson');
+  const { writeJson } = require('./utils/writePacket');
 
   const json = convRaw2Json(data);
   
@@ -31,7 +31,7 @@ parser.on('data', data => {
     body: json,
   };
 
-  writeJson(packet);
+  writePacket(packet);
 
   debug(s);
   debug(JSON.stringify(json, undefined, 2));

@@ -10,9 +10,7 @@ const saveFile = (fname, data) => {
 
 };
 
-//JSON.stringify(json)
-
-module.exports.writeJson = (packet) => {
+module.exports.writePacket = (packet) => {
   const json = packet.body;
   const payload = json.payload;
 
