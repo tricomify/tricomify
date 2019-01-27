@@ -12,7 +12,8 @@ const saveFile = (fname, data) => {
 
 //JSON.stringify(json)
 
-module.exports.writeJson = (json) => {
+module.exports.writeJson = (packet) => {
+  const json = packet.body;
   const payload = json.payload;
 
   if (1 !== payload && 2 !== payload) return false;
