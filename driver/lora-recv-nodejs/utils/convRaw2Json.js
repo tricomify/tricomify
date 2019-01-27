@@ -34,13 +34,13 @@ module.exports.convRaw2Json = (rawData) => {
     json.tx_gpsTime = cs[13];
     json.tx_lat = parseInt(cs[14])/1e6;
     json.tx_long = parseInt(cs[15])/1e6;
-    json.tx_alt  = cs[16];
+    json.tx_alt  = parseInt(cs[16]);
   }
 
   if (2 === payload) {
-    json.tx_temp = cs[13] || none;
-    json.tx_airP = cs[14] || none;
-    json.tx_volt = cs[15] || none;
+    json.tx_temp = parseInt(cs[13]);
+    json.tx_airP = parseInt(cs[14]);
+    json.tx_volt = parseInt(cs[15])/10.0;
   }
 
   let isBroken = false;
