@@ -31,10 +31,10 @@ module.exports.convRaw2Json = (rawData) => {
   json.payload = payload;
 
   if (1 === payload) {
-    json.tx_gpsTime = cs[13] || none;
-    json.tx_lat = parseInt(cs[14])/1e6 || none;
-    json.tx_long = parseInt(cs[15])/1e6 || none;
-    json.tx_alt  = cs[16] || none;
+    json.tx_gpsTime = cs[13];
+    json.tx_lat = parseInt(cs[14])/1e6;
+    json.tx_long = parseInt(cs[15])/1e6;
+    json.tx_alt  = cs[16];
   }
 
   if (2 === payload) {
@@ -44,14 +44,6 @@ module.exports.convRaw2Json = (rawData) => {
   }
 
   let isBroken = false;
-  if (1 === payload) {
-    if((none === json.tx_gpsTime) ||
-       (none === json.tx_lat) ||
-       (none === json.tx_long) ||
-       (none === json.tx_alt)) {
-      isBroken = true;
-    }
-  }
 
   if (2 === payload) {
     if((none === json.tx_temp) ||

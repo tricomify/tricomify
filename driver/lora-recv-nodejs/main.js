@@ -23,6 +23,7 @@ parser.on('data', data => {
   const s = data.replace(/\r/g, '');
   const { convRaw2Json } = require('./utils/convRaw2Json');
   const { writePacket } = require('./utils/writePacket');
+  const { checkPacket } = require('./utils/checkPacket');
 
   const json = convRaw2Json(data);
   
@@ -31,11 +32,13 @@ parser.on('data', data => {
     body: json,
   };
 
-  writePacket(packet);
+  if (checkPacket(packet)) {
+    writePacket(packet);
+  }
 
   debug(s);
   debug(JSON.stringify(json, undefined, 2));
-  
+
 });
 
 
