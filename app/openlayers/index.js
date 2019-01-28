@@ -35,8 +35,8 @@ import Point from 'ol/geom/Point';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
 import {Fill, RegularShape, Stroke, Style} from 'ol/style';
-const stroke = new Stroke({color: 'white', width: 1});
-const fill = new Fill({color: 'blue'});
+const stroke = new Stroke({color: 'black', width: 1});
+const fill = new Fill({color: 'gold'});
 const styles = {
   'square': new Style({
     image: new RegularShape({
