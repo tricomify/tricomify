@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const protocolVersion = require('./utils/protocolVersion');
 const SerialPort = require('serialport');
 const Readline = require('@serialport/parser-readline');
