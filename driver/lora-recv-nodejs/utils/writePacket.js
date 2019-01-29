@@ -25,7 +25,7 @@ module.exports.writePacket = (packet) => {
   const ms = String((da.getMilliseconds())).padStart(3, '0');
   const fname = './log/' + yy + mm + dd + '-' + hh + mi + '-' + ms + '.json'; 
 
-  saveFile(fname, JSON.stringify(json, undefined, 2));
+  saveFile(fname, JSON.stringify(packet, undefined, 2));
 
   return true;
 }
