@@ -15,9 +15,9 @@ for (f of files) {
 
 console.log('export const pos =[');
 for (p of packets) {
-  if (1 === p.payload) {
-    const lat = p.tx_lat;
-    const lon = p.tx_long;
+  if (1 === p.body.payload) {
+    const lat = p.body.tx_lat;
+    const lon = p.body.tx_long;
     if ( lat !== null && lon !== null) {
       const s = '  ['+lon+', '+lat+'],';
       console.log(s);
