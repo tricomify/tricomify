@@ -3,7 +3,9 @@
 const protocolVersion = require('./utils/protocolVersion');
 const SerialPort = require('serialport');
 const Readline = require('@serialport/parser-readline');
-const port = new SerialPort('/dev/ttyUSB0', {
+const portname_macOS = '/dev/tty.usbserial-A7043MQP';
+const portname_linux = '/dev/ttyUSB0';
+const port = new SerialPort(portname_macOS, {
   baudRate: 57600
 });
 const parser = port.pipe(new Readline({ delimiter: '\n' }));
