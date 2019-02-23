@@ -1,4 +1,4 @@
-#Time-stamp: <2019-01-23 12:56:46 hamada>
+#Time-stamp: <2019-02-23 12:15:38 hamada>
 
 TARGET=./main.js
 
@@ -33,3 +33,5 @@ npm.list:
 npm.install:
 	npm install
 
+n.install:
+	curl -L https://git.io/n-install |bash -
