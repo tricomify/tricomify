@@ -1,3 +1,3 @@
 all:
-	./main.js >../openlayers/pos.js 
+	./main.js |tee ../openlayers/pos.js 
 
