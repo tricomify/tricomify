@@ -39,6 +39,7 @@ const stroke = new Stroke({color: 'black', width: 1});
 const fill = new Fill({color: 'gold'});
 const fill_red = new Fill({color: 'red'});
 const fill_blue = new Fill({color: 'blue'});
+const fill_green = new Fill({color: '#6F9'});
 const styles = {
   'square': new Style({
     image: new RegularShape({
@@ -57,6 +58,16 @@ const styles = {
       radius: 10,
       radius2: 4,
       angle: 0
+    })
+  }),
+  'x': new Style({
+    image: new RegularShape({
+      fill: fill_green,
+      stroke: stroke,
+      points: 5,
+      radius: 6,
+      radius2: 6,
+      angle: Math.PI / 5
     })
   }),
   'triangle': new Style({
@@ -83,7 +94,7 @@ for (let i = 0; i < count; ++i) {
   if (21 === tid) {
     features[i].setStyle(styles['triangle']);
   } else if (22 === tid) {
-    features[i].setStyle(styles['square']);
+    features[i].setStyle(styles['x']);
   } else {
     features[i].setStyle(styles['star']);
   }
