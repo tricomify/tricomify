@@ -17,11 +17,14 @@ console.log('export const pos = [');
 for (p of packets) {
   if (1 === p.body.payload) {
     const tid = p.body.tx_id;
-    const lat = p.body.tx_lat;
-    const lon = p.body.tx_long;
-    if ( lat !== null && lon !== null) {
-      const s = '  ['+lon+', '+lat+', '+tid+'],';
-      console.log(s);
+    const tx_lat = p.body.tx_lat;
+    const tx_lng = p.body.tx_long;
+
+    if ( tx_lat !== null && tx_lng !== null) {
+      const rx_lat = p.body.rx_lat;
+      const rx_lng = p.body.rx_long;
+      const packet = '  ['+tid+', '+rx_lng+', '+rx_lat+', '+tx_lng+', '+tx_lat+'],';
+      console.log(packet);
     }
   }
 }
