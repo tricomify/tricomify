@@ -149,7 +149,8 @@ const map = new Map({
     // [139.754784, 35.708316] -- Kasuga
     // center:	[106.822824, -6.185648], // Jakarta
     // center:	[115.233488, -8.705538], // Bali, TUNA Center
-    center:	[115.263554,-8.695564], // Bali, Maison Hotel
-    zoom: 18
+    // center:	[115.263554,-8.695564], // Bali, Maison Hotel
+    center:	[115.262592, -8.707222], // Bali, Beach
+    zoom: 13
   })
 });
