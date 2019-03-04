@@ -53,11 +53,11 @@ const styles = {
   }),
   'star': new Style({
     image: new RegularShape({
-      fill: fill_red,
+      fill: fill_blue,
       stroke: stroke,
       points: 5,
-      radius: 10,
-      radius2: 4,
+      radius: 5,
+      radius2: 2,
       angle: 0
     })
   }),
@@ -66,8 +66,8 @@ const styles = {
       fill: fill,
       stroke: stroke,
       points: 5,
-      radius: 6,
-      radius2: 6,
+      radius: 3,
+      radius2: 3,
       angle: Math.PI / 5
     })
   }),
@@ -76,7 +76,7 @@ const styles = {
       fill: fill,
       stroke: stroke,
       points: 3,
-      radius: 10,
+      radius: 5,
       rotation: Math.PI / 4,
       angle: 0
     })
@@ -86,7 +86,7 @@ const styles = {
       fill: fill_red,
       stroke: stroke,
       points: 8,
-      radius: 5,
+      radius: 3,
       rotation: Math.PI / 8,
       angle: 0
     })
@@ -107,9 +107,9 @@ for (let i = 0; i < count; i += 2) {
   // Point Tx
   features[i] = new Feature(new Point([tx_lng, tx_lat]));
   if (21 === tid) {
-    features[i].setStyle(styles['triangle']);
-  } else if (22 === tid) {
     features[i].setStyle(styles['x']);
+  } else if (22 === tid) {
+    features[i].setStyle(styles['triangle']);
   } else { // (23 === tid)
     features[i].setStyle(styles['star']);
   }
@@ -141,8 +141,8 @@ const map = new Map({
     new Tile({
       source: new OSM()
     }),
-    vectorLayer,
-    vectorLayer2
+    vectorLayer2,
+    vectorLayer
   ],
   view: new View({
     projection: 'EPSG:4326', //HERE IS THE VIEW PROJECTION
