@@ -1,2 +1,2 @@
-exports.protocolVersion = '0.0.1';
+exports.protocolVersion = '0.0.2';
 

@@ -1,11 +1,19 @@
 #!/usr/bin/env node
 
+const portname = (() => {
+  console.log('OS type: ', process.platform);
+  const is_windows = ('win32' === process.platform);
+  const is_mac = ('darwin' === process.platform);
+  const is_linux = ('linux' === process.platform);
+  if (is_windows) return '/dev/com1';
+  if (is_mac) return '/dev/tty.usbserial-A7043MQP';
+  if (is_linux) return '/dev/ttyUSB0';
+})();
+
 const protocolVersion = require('./utils/protocolVersion');
 const SerialPort = require('serialport');
 const Readline = require('@serialport/parser-readline');
-const portname_macOS = '/dev/tty.usbserial-A7043MQP';
-const portname_linux = '/dev/ttyUSB0';
-const port = new SerialPort(portname_macOS, {
+const port = new SerialPort(portname, {
   baudRate: 57600
 });
 const parser = port.pipe(new Readline({ delimiter: '\n' }));
