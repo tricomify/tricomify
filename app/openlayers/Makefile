@@ -1,4 +1,9 @@
-all:
+HOST_DEPLOY=sel
+
+all: build
+
+build:
+	../script/main.js |tee pos.js
 	npm run-script build
 
 run:
@@ -12,20 +17,11 @@ clean:
 
 c: clean
 
-deploy:
-	rsync -av --delete dist/ sel:html/app/
+deploy: clean build
+	rsync -avz --delete dist/ ${HOST_DEPLOY}:html/app/
 	rm -f dist.tar.bz2
 	tar cvf dist.tar dist
 	bzip2 -9 dist.tar
-	rsync -av dist.tar.bz2 sel:html/app/
-	rm -f dist.tar
-
-deploy.atv:
-	rsync -avz --progress --delete dist/ atv:html/
+	rsync -avz dist.tar.bz2 ${HOST_DEPLOY}:html/app/
 	rm -f dist.tar.bz2
-	tar cvf dist.tar dist
-	bzip2 -9 dist.tar
-	rsync -avz --progress dist.tar.bz2  atv:html/
-	rm -f dist.tar
-
 
