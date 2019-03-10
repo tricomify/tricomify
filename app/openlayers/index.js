@@ -56,8 +56,8 @@ const styles = {
       fill: fill_blue,
       stroke: stroke,
       points: 5,
-      radius: 10,//5,
-      radius2: 5,//2,
+      radius: 6, //10,
+      radius2: 3, //5,
       angle: 0
     })
   }),
