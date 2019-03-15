@@ -7,6 +7,8 @@ const portname = (() => {
   const is_linux = ('linux' === process.platform);
   if (is_windows) return '/dev/com1';
   if (is_mac) return '/dev/tty.usbserial-A7043MQP';
+//  if (is_mac) return '/dev/tty.usbserial-A601E4ZN';
+//  if (is_mac) return '/dev/tty.usbserial-A601E89L'; // Tx23
   if (is_linux) return '/dev/ttyUSB0';
 })();
 

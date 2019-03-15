@@ -1,8 +1,18 @@
 #!/usr/bin/env node
 
 const { readdirSync, readFileSync } = require('fs');
+const assert = require('assert');
 
-const path = './log/';
+try {
+  assert.strictEqual(3, process.argv.length);
+} catch (err) {
+  console.error("Error !!");
+  console.error("process.arvg.length: " + process.argv.length +", should be 3!");
+  for (a of process.argv) console.log(a);
+  return -1;
+}
+
+const path = process.argv[2];
 const files = readdirSync(path).slice().sort();
 
 let packets = [];

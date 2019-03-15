@@ -20,7 +20,10 @@ module.exports.convRaw2Json = (rawData) => {
   json.rx_recvCnt = cs[1];
   json.rx_gpsDate = cs[2];
   json.rx_gpsTime = cs[3];
-  json.rx_lat = (0 === cs[4]) ? null : parseInt(cs[4])/1e6 - 4294.967286;
+
+  //json.rx_lat = (0 === cs[4]) ? null : parseInt(cs[4])/1e6 - 4294.967286;
+  json.rx_lat = (0 === cs[4]) ? null : parseInt(cs[4])/1e6;
+
   json.rx_long = (0 === cs[5]) ? null : parseInt(cs[5])/1e6;
   json.rx_alt = cs[6];
   json.rx_temp = cs[7];

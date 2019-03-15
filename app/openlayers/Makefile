@@ -3,7 +3,7 @@ HOST_DEPLOY=sel
 all: build
 
 build:
-	./conv.js |tee pos.js
+	./conv.js ./log/|tee pos.js
 	npm run-script build
 
 run:
@@ -13,6 +13,10 @@ init:
 	npm install
 
 clean: 
+	rm -rf *~ .*~ dist 
+	rm -f pos.js
+
+clean.hard: 
 	rm -rf *~ .*~ dist .cache
 	rm -f pos.js
 
