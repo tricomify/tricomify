@@ -25,9 +25,6 @@ for (f of files) {
   packets.push(packet);
 }
 
-
-//    "rx_gpsDate": "130319",
-//    "rx_gpsTime": "110603",
 let ti = 0;
 
 for (p of packets) {
@@ -44,7 +41,7 @@ for (p of packets) {
 
       const getDateNow = () => {
         let dt = new Date();
-        dt.setMinutes(dt.getMinutes() + ti);
+        dt.setSeconds(dt.getSeconds() + ti);
         ti += 4;
         dt.setFullYear(2018);
         dt.setMonth(1);
