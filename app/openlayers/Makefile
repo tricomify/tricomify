@@ -24,6 +24,8 @@ c: clean
 
 deploy: clean build
 	rsync -avz --delete dist/ ${HOST_DEPLOY}:html/app/
+
+backup:
 	rm -f dist.tar.bz2
 	tar cvf dist.tar dist
 	bzip2 -9 dist.tar
