@@ -25,7 +25,11 @@ for (f of files) {
   packets.push(packet);
 }
 
-let ti = 0;
+const dt = new Date();
+//dt.setFullYear(2018);
+//dt.setMonth(1);
+//dt.setDate(1);
+dt.setHours(dt.getHours()-7);
 
 for (p of packets) {
   if (1 === p.body.payload) {
@@ -40,12 +44,7 @@ for (p of packets) {
       let rx_gpsTime = p.rx_gpsTime;
 
       const getDateNow = () => {
-        let dt = new Date();
-        dt.setSeconds(dt.getSeconds() + ti);
-        ti += 4;
-        dt.setFullYear(2018);
-        dt.setMonth(1);
-        dt.setDate(1);
+        dt.setSeconds(dt.getSeconds() + 4);
         let formatted = dt.toFormat("YYYY-MM-DD HH24:MI:SS");
         return formatted;
       }
