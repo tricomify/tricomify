@@ -1,15 +1,19 @@
 #!/usr/bin/env node
 
+const portname_windows = 'COM3';
+const portname_linux = '/dev/ttyUSB0';
+const portname_mac = '/dev/tty.usbserial-A7043MQP';
+//const portname_mac = '/dev/tty.usbserial-A601E4ZN';
+//const portname_mac = '/dev/tty.usbserial-A601E89L'; // Tx23
+
 const portname = (() => {
   console.log('OS type: ', process.platform);
   const is_windows = ('win32' === process.platform);
   const is_mac = ('darwin' === process.platform);
   const is_linux = ('linux' === process.platform);
-  if (is_windows) return '/dev/com1';
-  if (is_mac) return '/dev/tty.usbserial-A7043MQP';
-//  if (is_mac) return '/dev/tty.usbserial-A601E4ZN';
-//  if (is_mac) return '/dev/tty.usbserial-A601E89L'; // Tx23
-  if (is_linux) return '/dev/ttyUSB0';
+  if (is_windows) return portname_windows;
+  if (is_mac) return portname_mac;
+  if (is_linux) return portname_linux;
 })();
 
 const protocolVersion = require('./utils/protocolVersion');
