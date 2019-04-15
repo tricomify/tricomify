@@ -11,7 +11,6 @@ const ndelay = 5000; // msec
 let balancePrev = auth.updateBalance();
 console.log(tstr(), balancePrev);
 
-
 const JukeBox = class JukeBox {
   constructor () {
     this.time = new Date();
@@ -45,9 +44,9 @@ const JukeBox = class JukeBox {
   }
 }
 
-const jukeBox = new JukeBox();
-
 const mainLoop = () => {
+  const jukeBox = new JukeBox();
+
   gpio.setup(pinGpio, gpio.DIR_OUT, () => {
 
     setInterval (() => {
@@ -61,10 +60,10 @@ const mainLoop = () => {
       const meter = jukeBox.getMeter();
 
       if(meter > 1) {
-        console.log('!!!!!!!!!!!!!! ON');
+        console.log('---------------------- ON');
         gpio.write(pinGpio, true);
       } else {
-        console.log('xxxxxx OFF');
+        console.log('...................... OFF');
         gpio.write(pinGpio, false);
       }
 
