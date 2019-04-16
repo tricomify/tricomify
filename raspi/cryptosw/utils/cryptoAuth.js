@@ -31,7 +31,8 @@ module.exports = class CryptoAuth{
   }
 
   async getFromBlockChain () {
-    const web3 = new Web3(new Web3.providers.WebsocketProvider("wss://ropsten.infura.io/ws/v3/221466081c6f409e957af37e54287801"));
+    const web3 = new Web3(new Web3.providers.WebsocketProvider("wss://ropsten.infura.io/ws/v3/8ae7eed06a98455a94f1eeccb69b9ffa"));
+
     const ckSum = (a) => (web3.utils.toChecksumAddress(a));
     const waddr = ckSum("0x5b8dCE0667C0e28F11E2Fa544d78A771cE8AE60B"); // wallet address
     const taddr = ckSum('0x7b3C93596C3e07F8AFd06a1e7aEd3F4fE2EF74B6'); // token address
