@@ -1,4 +1,4 @@
-HOST_DEPLOY=sel
+HOST_DEPLOY=tricomify.io
 
 all: build
 

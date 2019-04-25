@@ -95,6 +95,7 @@ const styles = {
 
 import { pos } from './pos';
 import { center } from './center';
+import { zoom } from './zoom';
 const count = pos.length * 2;
 const features = new Array(count);
 const features2 = new Array(count>>1);
@@ -148,6 +149,6 @@ const map = new Map({
   view: new View({
     projection: 'EPSG:4326', //HERE IS THE VIEW PROJECTION
     center:	center,
-    zoom: 14.5
+    zoom: zoom
   })
 });

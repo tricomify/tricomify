@@ -19,6 +19,7 @@ export const center = [
   // 141.491392, 43.069092 // Nopporo
   // 139.770864, 35.70924  // yushima
   // 139.734784, 35.69178 // TKP Center, Ichigaya
-  139.766848, 35.681004 // JR Tokyo Station
+  //139.766848, 35.681004 // JR Tokyo Station
   //139.757344, 35.6549 // JR HamamatsuCho 
+129.934888, 32.919258
 ]
