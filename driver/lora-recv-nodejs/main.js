@@ -2,9 +2,11 @@
 
 const portname_windows = 'COM3';
 const portname_linux = '/dev/ttyUSB0';
-const portname_mac = '/dev/tty.usbserial-A7043MQP';
-//const portname_mac = '/dev/tty.usbserial-A601E4ZN';
+//const portname_mac = '/dev/tty.usbserial-A7043MQP';
+//const portname_mac = '/dev/tty.usbserial-A601E4ZN'; // TRX24 (broken)
 //const portname_mac = '/dev/tty.usbserial-A601E89L'; // Tx23
+const portname_mac = '/dev/tty.usbserial-AL05HSCJ'; // TRx24 with serial-usb cable
+
 
 const portname = (() => {
   console.log('OS type: ', process.platform);
